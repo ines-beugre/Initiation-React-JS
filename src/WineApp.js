@@ -4,6 +4,8 @@ import Regions from './Regions';
 import { WineList } from './WineList';
 import Wine from './Wine';
 import LikeButton from './LikeButton';
+import CommentList from './CommentList';
+import Comment from './Comment';
 import * as WinesService from './services/Methods';
 
 

@@ -37,3 +37,8 @@ export function unlikeWine(id){
 export function isWineLiked(id){
     return fetch (`https://wines-api.herokuapp.com/api/wines/${id}/like`).then(r => r.json());
 }
+
+/*Section dédiée au commentaire*/
+export function fecthComments(id){
+    return fetch (`https://wines-api.herokuapp.com/api/wines/${id}/comments`).then(r => r.json());
+}

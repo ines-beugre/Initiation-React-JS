@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types'; 
 import LikeButton from './LikeButton';
-
+import CommentList from './CommentList';
 
 class Wine extends Component {
     static propTypes = {
@@ -44,19 +44,23 @@ class Wine extends Component {
                   </div>
                 <div className="card-stacked">
                     <div className="card-content">
-                        <h3>Name of the Wine</h3>
+                        <h3>{this.props.wine.id}</h3>
                         <div key={this.props.wine}>                       
                             <b>Appelation: </b>{this.props.wine.name }<br/>
                             <b>Region: </b>{this.props.wine.appellation.region }<br/>
                             <b>Color: </b>{this.props.wine.type}<br/>
-                            <b>Grapes:</b>{this.props.wine.grapes}<br/>
+                            <b>Grapes:</b>{this.props.wine.grapes } <br/>
                         </div>
+                        <CommentList 
+                        wine={this.state.wine}
+                    />
                     </div>
                     <div className="card-action">
+
                     <LikeButton 
                         wine={this.state.wine}
                     />
-                    
+                   
                     </div>
                      </div>
                 </div>

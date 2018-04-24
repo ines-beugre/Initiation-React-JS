@@ -8,7 +8,7 @@ class LikeButton extends Component{
       liked: false
     };
 
-  
+  /*mise à jour des nouvelles propriété, dans le cas où le vin reçoit un like ou un unlike*/
   componentWillReceiveProps(nextProps){
     if (nextProps.wine !== this.props.wine){
       WinesService.isWineLiked(nextProps.wine.id)
@@ -16,6 +16,7 @@ class LikeButton extends Component{
     }
   } 
 
+  /*fonction qui permet de changer le linke en unlike*/
   changeLikeStatut(id){
     if (this.state.liked){  //si la valeur du like= false
       WinesService.unlikeWine(id) //alors la methode unLikeWine est executé
@@ -27,23 +28,10 @@ class LikeButton extends Component{
     };
   }
 
-  /*
-    changeLikeStatut(id){
-    if (this.state.liked){
-      WinesService.unlikeWine(id)
-      .then (liked=>this.setState({liked: false}));
-    }
-    else {
-      WinesService.likeWine(id)
-      .then(liked=>this.setState({liked: true}));
-    };
-  }
-
-  */
   render() {
     return (
       <div>
-        {this.state.liked ? // si la variable liked est false; l'instruction ci-dessous s'execute
+        {this.state.liked ? // si la variable liked est false; et dans le cas où l'utilisateur clique sur le bouton Like, l'instruction ci-dessous s'execute et change le like en unlike
           <button type="button" onClick = {this.changeLikeStatut.bind(this)}>Unlike  
           <a className="waves-effect waves-teal btn-flat">
             <span>Unlike <i className="material-icons left">thumb_down</i></span>
