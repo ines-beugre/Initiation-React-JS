@@ -60,7 +60,6 @@ class WineApp extends Component{
             onSelectWine={this.onSelectWine}/>
         <Wine 
             wine={this.state.selectedWine}/>
-        <LikeButton />
         </div>
     </div>
         )

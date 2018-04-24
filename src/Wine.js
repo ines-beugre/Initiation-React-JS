@@ -23,15 +23,17 @@ class Wine extends Component {
         }
     };
     selectedWine=(id)=> {
-        this.state.selectWine(id)};
-      
+        this.state.selectWine(id)
+    };
+        
+
+/*****/
 /** methode qui permet de savoir qu'on a reçu la liste des vins, MAJ des props d'une composant*/
     componentWillReceiveProps(newProps) {
-    console.log(newProps.wines);
-}
+        this.setState({wine: newProps.wine});
+    }
 
   render() {
-      console.log(this.props.wine)
       if (this.props.wine!=null)
         return (
             <div className="col s12 m12 l6">
@@ -50,7 +52,12 @@ class Wine extends Component {
                             <b>Grapes:</b>{this.props.wine.grapes}<br/>
                         </div>
                     </div>
-                    <div className="card-action"></div>
+                    <div className="card-action">
+                    <LikeButton 
+                        wine={this.state.wine}
+                    />
+                    
+                    </div>
                      </div>
                 </div>
             </div>

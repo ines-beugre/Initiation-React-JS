@@ -18,6 +18,8 @@ export class WineList extends Component {
    }
 
     render(){
+        console.log(this.props.wines)
+        if (this.props.wines!=null)
         return(
             <div className="col s12 m6 l3">
             <h2 className="center-align">Wines list</h2>
@@ -34,9 +36,9 @@ export class WineList extends Component {
                 }
                 </div>
             </div>
-
-
         )
+        else 
+        return null
     }
 }
 
@@ -54,6 +56,7 @@ export default WineList;
 
  <div key={wines.id}> /*wine est un objet, so, on recupère son id
 
-
-
+        else 
+        return null
+ if (this.props.winelist!=null)
 */

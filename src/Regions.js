@@ -11,7 +11,7 @@ class Regions extends Component {
   
     render () {
       return (
-       <div className="collectihon">
+       <div className="collection">
           <h2 className="center-align">Regions</h2>
           {
             this.props.regions.map(region =>
